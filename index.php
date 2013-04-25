@@ -38,25 +38,13 @@
 		$tracks = $client->get(
 			'tracks', array('q' => 'dubstep', 'downloadable' => 'true', 'duration' > '1800000000'));
 
+		$json = file_get_contents($tracks, 0, null, null);
+
 		$data = json_decode($tracks);
 
-		function writeList($data){
-	    	global $data;
-	    	global $tracks;
-	    	echo '<ul>';
-
-	    	$data = explode(',', $tracks);
-	    	foreach($data as $mix){
-	        	echo '<li>'.$mix;
-	        	if(isset($data[$mix]))
-	            writeList($data[$mix]);
-	        	echo '</li>';
-    	}
-
-    	echo '</ul>';
-	}
-writeList($data[0]);
-		
+		foreach ( $data as $d ) {
+    		echo "<img class=artwork src={$d->artwork_url} alt={$d->title} /><p>{$d->title}, {$d->download_url}</p>";
+		}
 		?>
 
 	<script type="text/javascript" src="js/script.js"></script>
