@@ -32,18 +32,23 @@
 		require_once 'Services/Soundcloud.php';
 
 		// create a client object with your app credentials
-		$client = new Services_Soundcloud('91bd52531c9b150e11efac29abdb79eb');
+		$client = new Services_Soundcloud('91bd52531c9b150e11efac29abdb79eb', '5fc37f6ffc2af9a183cee5f5016aaa33');
 
 		// find all sounds of buskers licensed under 'creative commons share alike'
 		$tracks = $client->get(
-			'tracks', array('q' => 'dubstep', 'downloadable' => 'true', 'duration' > '1800000000'));
+			'tracks', array('q' => 'dubstep', 'downloadable' => 'true','duration' > '1800000000'));
 
 		$json = file_get_contents($tracks, 0, null, null);
 
 		$data = json_decode($tracks);
 
-		foreach ( $data as $d ) {
-    		echo "<img class=artwork src={$d->artwork_url} alt={$d->title} /><p>{$d->title}, {$d->download_url}</p>";
+
+		foreach ( $data as $d ) {	
+	    	if ($d->download_url == true) {
+	    		echo "<img class=artwork src={$d->artwork_url} alt={$d->title} /><p><a href={$d->download_url} class=btn>download</a></p>";
+			} else {
+				echo "";
+			};
 		}
 		?>
 
