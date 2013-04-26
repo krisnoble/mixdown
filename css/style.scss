@@ -3,7 +3,7 @@
 
 /* VARIABLES =================================== */
 
-
+$orange: #eb6f38;
 
 /* MIXINS ====================================== */
 
@@ -19,8 +19,39 @@
 
 /* SITE STYLES ================================= */
 
+html {
+	background-color: $orange;
+}
+
 body {
 	max-width: 40em;
 	margin: 0 auto;
 	font-family: helvetica, arial, sans-serif;
+}
+
+.track {
+	background-color: rgba(255,255,255,.7);
+	border-radius: 0.9em;
+	box-shadow: 0 0.2em 0.2em rgba(0,0,0,.2);
+	margin: 1em 0;
+	padding: 1em;
+	min-height: 8.2em;
+	img {
+		border-radius:0.44em;
+		float: left;
+		margin-right: 2em;
+		opacity: 0.8;
+		box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.6);
+	}
+}
+
+.btn {
+    background-color: $orange;
+    padding: 1em;
+    border-radius: 0.4em;
+    text-decoration: none;
+    color: white;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+    box-shadow: 0 0.1em 0.5em rgba(0,0,0,.3);
+    border:1px solid darken($orange,3%);
 }

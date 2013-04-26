@@ -45,9 +45,10 @@
 
 		foreach ( $data as $d ) {	
 	    	if ($d->download_url == true) {
-	    		echo "<img class=artwork src={$d->artwork_url} alt={$d->title} /><p><a href={$d->download_url} class=btn>download</a></p>";
+	    		echo "<div class=track><img class=artwork src={$d->artwork_url} alt={$d->title} />
+	    		<p><a href={$d->download_url}?client_id=91bd52531c9b150e11efac29abdb79eb class=btn>download</a></p></div>";
 			} else {
-				echo "";
+				
 			};
 		}
 		?>
