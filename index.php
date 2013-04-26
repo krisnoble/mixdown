@@ -45,8 +45,20 @@
 
 		foreach ( $data as $d ) {	
 	    	if ($d->download_url == true) {
+	    		// get the duration of the mix
+	    		$u = $d->duration;
+	    		if(($u/60) >= 60)
+					{
+					$u = mktime(0,($u / 360));
+					}
+					$timing = date('H:i:s',$u);
 	    		echo "<div class=track><img class=artwork src={$d->artwork_url} alt={$d->title} />
-	    		<p><a href={$d->download_url}?client_id=91bd52531c9b150e11efac29abdb79eb class=btn>download</a></p></div>";
+	    		<div class=cleafix>
+	    			<h1>{$d->title}</h1>
+	    			<p>Duration: {$timing}</p>
+	    			<p><a href={$d->permalink_url}>Perma</a>
+	    			<a href={$d->download_url}?client_id=91bd52531c9b150e11efac29abdb79eb class=btn>download</a>
+	    			</div></div>";
 			} else {
 				
 			};

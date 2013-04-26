@@ -54,4 +54,14 @@ body {
     text-shadow: 0 1px 1px rgba(0,0,0,0.5);
     box-shadow: 0 0.1em 0.5em rgba(0,0,0,.3);
     border:1px solid darken($orange,3%);
+    position: relative;
+    left: 61.6%;
+    top:2.1em;
+    @include transition(0.04s);
+    &:hover {
+    	background-color: lighten($orange, 20%);
+    	border: 1px solid lighten($orange, 10%);
+    	box-shadow: 0 0 0.2em rgba(0,0,0,.1);
+    	
+    }
 }

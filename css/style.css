@@ -69,4 +69,14 @@ body {
   color: white;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.3);
-  border: 1px solid #ea652a; }
+  border: 1px solid #ea652a;
+  position: relative;
+  left: 61.6%;
+  top: 2.1em;
+  -webkit-transition: all 0.04s ease-in-out;
+  -moz-transition: all 0.04s ease-in-out;
+  transition: all 0.04s ease-in-out; }
+  .btn:hover {
+    background-color: #f4b295;
+    border: 1px solid #f09166;
+    box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.1); }
