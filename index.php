@@ -29,23 +29,29 @@
 	<h1>BrockOut</h1>
 
 	<?php
+		// Lets display any errors - want to know what breaks Brockout
 		ini_set('display_errors', 'On');
 		error_reporting(E_ALL);
+
+		// Grabbing the Soundcloud PHP helper thing
 		require_once 'Services/Soundcloud.php';
 
 		// create a client object with your app credentials
 		$client = new Services_Soundcloud('91bd52531c9b150e11efac29abdb79eb', '5fc37f6ffc2af9a183cee5f5016aaa33');
 
-		// find all sounds of buskers licensed under 'creative commons share alike'
+		// search the API for the following.
 		$tracks = $client->get(
-			'tracks', array('q' => 'dubstep', 'downloadable' => 'true','duration' > '1800000000'));
+			'tracks', array('q' => 'dubstep', 'downloadable' => 'true', 'duration' > '1800000000'));
 
+		// lets get that into json
 		$json = file_get_contents($tracks, 0, null, null);
 
+		// and lets decode that JSOn - not entirely sure these two steps are required?
 		$data = json_decode($tracks);
 
-
+		// for every result in the JSON results, form a new object $d
 		foreach ( $data as $d ) {	
+			// if the download_url endpoint exists, show the track
 	    	if ($d->download_url == true) {
 	    		// get the duration of the mix
 	    		$u = $d->duration;
@@ -55,8 +61,15 @@
 					}
 					$timing = date('H:i:s',$u);
 
+				// images served via SC are too small for me. They do have larger images
+				// though, but these aren't served via the API - or at least, I couldn't
+				// find out how. So str_replace to the rescue. remove 'large' from the
+				// artwork_url endpoint and replace with t200x200 which will then provide
+				// me with a 200x200 thumbnail. Fuck yeah!
 				$img = $d->artwork_url;
 				$thumb = str_replace("large", "t200x200", $img);
+
+				// now to display the HTML that'll show each mix
 	    		echo "<div class=track><img class=artwork src={$thumb} alt={$d->title} />
 	    		<div class='cleafix meta'>
 	    			<h1>{$d->title}</h1>
@@ -65,7 +78,7 @@
 	    			<a href={$d->download_url}?client_id=91bd52531c9b150e11efac29abdb79eb class=btn>download</a>
 	    			</div></div>";
 			} else {
-				
+				// if download_url endpoint doesn't exist, show nothing.
 			};
 		}
 		?>
