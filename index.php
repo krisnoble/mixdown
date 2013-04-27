@@ -30,8 +30,8 @@
 
 	<?php
 		// Lets display any errors - want to know what breaks Brockout
-		ini_set('display_errors', 'On');
-		error_reporting(E_ALL);
+		// ini_set('display_errors', 'On');
+		// error_reporting(E_ALL);
 
 		// Grabbing the Soundcloud PHP helper thing
 		require_once 'Services/Soundcloud.php';
@@ -74,6 +74,10 @@
 	    		<div class='cleafix meta'>
 	    			<h1>{$d->title}</h1>
 	    			<p>Duration: {$timing}</p>
+	    			<audio controls='controls' preload='none'>
+					  <source src={$d->stream_url}?client_id=91bd52531c9b150e11efac29abdb79eb type='audio/mpeg'>
+					Your browser does not support the audio element.
+					</audio>
 	    			<!-- download button -->
 	    			<a href={$d->download_url}?client_id=91bd52531c9b150e11efac29abdb79eb class='ss-icon btn'>download</a>
 	    			</div></div>";
