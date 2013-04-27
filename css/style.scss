@@ -27,22 +27,29 @@ body {
 	max-width: 40em;
 	margin: 0 auto;
 	font-family: helvetica, arial, sans-serif;
+	color: #343434;
 }
 
 .track {
 	background-color: rgba(255,255,255,.7);
-	border-radius: 0.9em;
+	border-radius: 0.2em;
 	box-shadow: 0 0.2em 0.2em rgba(0,0,0,.2);
-	margin: 1em 0;
-	padding: 1em;
-	min-height: 8.2em;
+	margin: 3em 0;
+	padding: 0;
+	min-height: 12.5em;
 	position: relative;
 	img {
-		border-radius:0.44em;
+		border-top-left-radius: 0.14em;
+		border-bottom-left-radius: 0.14em;
 		float: left;
 		margin-right: 2em;
 		opacity: 0.8;
-		box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.6);
+		/* box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.6); no longer needed */
+		border-right: 1px solid rgba(255,255,255,0.8);
+	}
+	.meta {
+		padding: 1em 0;
+		line-height: 1.4;
 	}
 }
 

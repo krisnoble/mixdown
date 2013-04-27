@@ -52,8 +52,11 @@
 					$u = mktime(0,($u / 360));
 					}
 					$timing = date('H:i:s',$u);
-	    		echo "<div class=track><img class=artwork src={$d->artwork_url} alt={$d->title} />
-	    		<div class=cleafix>
+
+				$img = $d->artwork_url;
+				$thumb = str_replace("large", "t200x200", $img);
+	    		echo "<div class=track><img class=artwork src={$thumb} alt={$d->title} />
+	    		<div class='cleafix meta'>
 	    			<h1>{$d->title}</h1>
 	    			<p>Duration: {$timing}</p>
 	    			<p><a href={$d->permalink_url}>Perma</a>
