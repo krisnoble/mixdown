@@ -70,12 +70,12 @@
 				$thumb = str_replace("large", "t200x200", $img);
 
 				// now to display the HTML that'll show each mix
-	    		echo "<div class=track><img class=artwork src={$thumb} alt={$d->title} />
+	    		echo "<div class=track><a href={$d->permalink_url} alt='Permalink to {$d->title}'><img class=artwork src={$thumb} alt={$d->title} /></a>
 	    		<div class='cleafix meta'>
 	    			<h1>{$d->title}</h1>
 	    			<p>Duration: {$timing}</p>
-	    			<p><a href={$d->permalink_url}>Perma</a>
-	    			<a href={$d->download_url}?client_id=91bd52531c9b150e11efac29abdb79eb class=btn>download</a>
+	    			<!-- download button -->
+	    			<a href={$d->download_url}?client_id=91bd52531c9b150e11efac29abdb79eb class='ss-icon btn'>download</a>
 	    			</div></div>";
 			} else {
 				// if download_url endpoint doesn't exist, show nothing.
