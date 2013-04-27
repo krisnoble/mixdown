@@ -22,6 +22,8 @@
 	<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1">
 
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+	<link href="webfonts/ss-standard.css" rel="stylesheet" /> <!-- <3 symbolset -->
+
 </head>
 <body>
 	<h1>BrockOut</h1>
