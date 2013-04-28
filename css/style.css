@@ -1,0 +1,91 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* VARIABLES =================================== */
+/* MIXINS ====================================== */
+/* GENERAL STYLES ================================= */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* SITE STYLES ================================= */
+html {
+  background-color: #eb6f38; }
+
+body {
+  max-width: 40em;
+  margin: 0 auto;
+  font-family: helvetica, arial, sans-serif;
+  color: #343434; }
+
+.track {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 0.2em;
+  box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.2);
+  margin: 3em 0;
+  padding: 0;
+  min-height: 12.5em;
+  position: relative; }
+  .track h1 {
+    font-weight: bold; }
+  .track img {
+    border-top-left-radius: 0.14em;
+    border-bottom-left-radius: 0.14em;
+    float: left;
+    margin-right: 2em;
+    opacity: 0.8;
+    /* box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.6); no longer needed */
+    border-right: 1px solid rgba(255, 255, 255, 0.8); }
+  .track .meta {
+    padding: 1em 0;
+    line-height: 1.4; }
+
+.btn {
+  background-color: #eb6f38;
+  padding: 0.6em 0.7em 0.4em;
+  border-radius: 0.2em;
+  text-decoration: none;
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.2);
+  border: 1px solid #ea652a;
+  position: absolute;
+  right: 2%;
+  bottom: 7%;
+  -webkit-transition: all 0.04s ease-in-out;
+  -moz-transition: all 0.04s ease-in-out;
+  transition: all 0.04s ease-in-out; }
+  .btn:hover {
+    background-color: #f4b295;
+    border: 1px solid #f09166;
+    box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.1); }
