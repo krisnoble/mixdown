@@ -9,7 +9,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Brockout ~ A Better sort tool for SoundCloud</title>
+	<title>MixDown ~ A Better sort tool for SoundCloud</title>
 
 	<!-- If JS is available, changes <html> class to js -->
 	<script>
@@ -26,10 +26,10 @@
 
 </head>
 <body>
-	<h1>BrockOut</h1>
+	<h1>MixDown</h1>
 
 	<?php
-		// Lets display any errors - want to know what breaks Brockout
+		// Lets display any errors - want to know what breaks MixDown
 		// ini_set('display_errors', 'On');
 		// error_reporting(E_ALL);
 
