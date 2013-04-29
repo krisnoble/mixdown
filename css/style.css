@@ -48,6 +48,33 @@ body {
   font-family: helvetica, arial, sans-serif;
   color: #343434; }
 
+.search {
+  padding-top: 2em;
+  margin: 0 auto;
+  width: 50%; }
+  .search label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 2.4em;
+    vertical-align: middle;
+    padding-right: 0.2em; }
+  .search input {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.6);
+    font-size: 2em;
+    max-width: 80%;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0.25em 1em;
+    text-align: center;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+    .search input:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-top-left-radius: 0.1em;
+      border-top-right-radius: 0.1em; }
+
 .track {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 0.2em;
@@ -57,7 +84,13 @@ body {
   min-height: 12.5em;
   position: relative; }
   .track h1 {
-    font-weight: bold; }
+    font-weight: bold;
+    padding: 1em 0 0.8em;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 1em;
+    color: rgba(0, 0, 0, 0.7);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9); }
   .track img {
     border-top-left-radius: 0.14em;
     border-bottom-left-radius: 0.14em;
@@ -67,8 +100,15 @@ body {
     /* box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.6); no longer needed */
     border-right: 1px solid rgba(255, 255, 255, 0.8); }
   .track .meta {
-    padding: 1em 0;
     line-height: 1.4; }
+  .track .metadata {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.75em;
+    padding: 0 0 1.1em; }
+    .track .metadata span {
+      vertical-align: middle;
+      padding: 0 0.25em;
+      font-size: 0.75em; }
 
 .btn {
   background-color: #eb6f38;
@@ -81,7 +121,8 @@ body {
   border: 1px solid #ea652a;
   position: absolute;
   right: 2%;
-  bottom: 7%;
+  bottom: 0.9em;
+  margin-left: 0.9em;
   -webkit-transition: all 0.04s ease-in-out;
   -moz-transition: all 0.04s ease-in-out;
   transition: all 0.04s ease-in-out; }

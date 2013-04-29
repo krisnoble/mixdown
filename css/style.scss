@@ -30,6 +30,35 @@ body {
 	color: #343434;
 }
 
+.search {
+	padding-top:2em;
+	margin: 0 auto;
+	width: 50%;
+	label {	
+	    color: rgba(255,255,255,0.8);
+	    font-size: 2.4em;
+	    vertical-align: middle;
+	    padding-right: 0.2em;
+	}
+	input {    
+		background-color: rgba(255,255,255,0);
+	    border: none;
+	    border-bottom: 3px solid rgba(255,255,255,.6);
+	    font-size: 2em;
+	    max-width: 80%;
+	    color: rgba(255,255,255,0.9);
+	    padding: 0.25em 1em;
+	    text-align: center;
+	    @include transition(0.2s);
+	    &:focus {
+	    	outline: none;
+	    	background-color: rgba(255,255,255,.2);
+	    	border-top-left-radius: 0.1em;
+	    	border-top-right-radius: 0.1em;
+	    }
+    }
+}
+
 .track {
 	background-color: rgba(255,255,255,.7);
 	border-radius: 0.2em;
@@ -39,7 +68,13 @@ body {
 	min-height: 12.5em;
 	position: relative;
 	h1 {
-		font-weight: bold;
+		font-weight: bold;   
+		padding: 1em 0 0.8em;
+	    background-color: rgba(255,255,255,0.6);
+	    border-bottom: 1px solid rgba(0,0,0,0.2);
+	    margin-bottom: 1em;
+	    color: rgba(0,0,0,0.7);
+	    text-shadow: 0 1px 0 rgba(255,255,255,0.9);
 	}
 	img {
 		border-top-left-radius: 0.14em;
@@ -51,8 +86,17 @@ body {
 		border-right: 1px solid rgba(255,255,255,0.8);
 	}
 	.meta {
-		padding: 1em 0;
 		line-height: 1.4;
+	}
+	.metadata {
+		color: rgba(0,0,0,.7);
+		font-size: 0.75em;
+		padding: 0 0 1.1em;
+		span {
+			vertical-align: middle;
+			padding: 0 0.25em;
+			font-size: 0.75em;
+		}
 	}
 }
 
@@ -67,7 +111,8 @@ body {
     border:1px solid darken($orange,3%);
     position: absolute;
     right: 2%;
-    bottom:7%;
+    bottom: 0.9em;
+    margin-left:0.9em;
     @include transition(0.04s);
     &:hover {
     	background-color: lighten($orange, 20%);

@@ -28,6 +28,12 @@
 <body>
 	<h1>MixDown</h1>
 
+	<form class="search" name="searchfield">
+		<label class="ss-icon">Search</label>
+		<input class="ss-icon ss-search" type="text" name="search" />
+	</form>
+
+
 	<?php
 		// Lets display any errors - want to know what breaks MixDown
 		// ini_set('display_errors', 'On');
@@ -41,7 +47,7 @@
 
 		// search the API for the following.
 		$tracks = $client->get(
-			'tracks', array('q' => 'dubstep', 'downloadable' => 'true', 'duration' > '1800000000'));
+			'tracks', array('q' => 'house', 'downloadable' => 'true', 'duration' > '1800000000'));
 
 		// lets get that into json
 		$json = file_get_contents($tracks, 0, null, null);
@@ -73,7 +79,7 @@
 	    		echo "<div class=track><a href={$d->permalink_url} alt='Permalink to {$d->title}'><img class=artwork src={$thumb} alt={$d->title} /></a>
 	    		<div class='cleafix meta'>
 	    			<h1>{$d->title}</h1>
-	    			<p>Duration: {$timing}</p>
+	    			<p class='metadata'><span class='ss-icon'>Time</span> {$timing} | <span class='ss-icon'>play</span> {$d->playback_count} | <span class='ss-icon'>download</span> {$d->download_count}</p>
 	    			<audio controls='controls' preload='none'>
 					  <source src={$d->stream_url}?client_id=91bd52531c9b150e11efac29abdb79eb type='audio/mpeg'>
 					Your browser does not support the audio element.
