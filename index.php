@@ -24,7 +24,7 @@
 	  client_id: '91bd52531c9b150e11efac29abdb79eb'
 	});
 
-	SC.get('/tracks', { q: 'dubstep', license: 'cc-by-sa' }, function(tracks) {
+	SC.get('/tracks', { q: 'dubstep', duration: { from: 1800000 }, downloadable: 'true' }, function(tracks) {
 				console.log(tracks);
 
 		output = '';	
