@@ -16,7 +16,7 @@
 		var docElement = document.documentElement;
 		docElement.className = docElement.className.replace(/\bno-js\b/,'') + ' js';
 	</script>
-	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
 	<script src="http://connect.soundcloud.com/sdk.js"></script>
 	<script>
@@ -24,17 +24,20 @@
 	  client_id: '91bd52531c9b150e11efac29abdb79eb'
 	});
 
-	var getMix = function(){
+	SC.get('/tracks', { q: 'dubstep', license: 'cc-by-sa' }, function(tracks) {
+				console.log(tracks);
 
-        var term = $('#search').val();
+		output = '';	
 
-            SC.get('/tracks', { q: 'term', duration: { from: 1800000 } }, function(tracks) {
-  console.log(tracks);
-});
+		for (var i = 0; i < tracks.length; i++) {
+		    output += '<div class=track><a href='+tracks[i].permalink_url+' alt="Permalink to '+tracks[i].title+'"><img class=artwork src='+tracks[i].artwork_url+' alt='+tracks[i].title+' /></a><div class="clearfix meta"><h1>'+tracks[i].title+'</h1><p class="metadata"><span class="ss-icon">Time</span> {$timing} | <span class="ss-icon">play</span> '+tracks[i].playback_count+' | <span class="ss-icon">download</span> '+tracks[i].download_count+'</p><audio controls="controls" preload="none"><source src='+tracks[i].stream_url+'?client_id=91bd52531c9b150e11efac29abdb79eb type="audio/mpeg">Your browser does not support the audio element.</audio><!-- download button --><a href='+tracks[i].download_url+'?client_id=91bd52531c9b150e11efac29abdb79eb class="ss-icon btn">download</a></div></div>'
+		}
 
-        return false;
-   };
+		$('#sc').html( output );
+	});
 
+	tracks();
+	
 	</script>
 
 	<meta name="HandheldFriendly" content="True">
@@ -54,7 +57,7 @@
 	</form>
 
 	<div id="sc" class="sccontent">
-	
+
 	</div>
 
 	<script type="text/javascript" src="js/script.js"></script>
