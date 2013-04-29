@@ -28,7 +28,7 @@
 
         var term = $('#search').val();
 
-            SC.get('/tracks', { q: term, duration: { from: 1800000 } }, function(tracks) {
+            SC.get('/tracks', { q: 'term', duration: { from: 1800000 } }, function(tracks) {
   console.log(tracks);
 });
 
