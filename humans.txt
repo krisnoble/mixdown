@@ -2,9 +2,18 @@ SITE DEVELOPMENT
 
     Anthony Killeen ~ Designer/developer ~ @mrqwest
 
+ADDED HELP VIA THE TWITTERS
+
+	Matthew Roach ~ @faxtion
+	Ben Howdle ~ @benhowdle
+
+OTHER RESOURCES
+
+	Function to convert milliseconds to a readable format: https://github.com/alihaberfield/journeymix
 
 SITE
 
     HTML
     (S)CSS
+    JS
     
