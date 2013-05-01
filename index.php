@@ -19,43 +19,6 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
 	<script src="http://connect.soundcloud.com/sdk.js"></script>
-	<script>
-	SC.initialize({
-	  client_id: '91bd52531c9b150e11efac29abdb79eb'
-	});
-
-	$.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb79eb&format=json', { q: 'dubstep', downloadable: true, duration: { from: 1800000 }, limit: 10 }, function(tracks) {
-
-				console.log(tracks);
-
-		// https://github.com/alihaberfield/journeymix/blob/master/assets/js/journeymix.js, // thanks Ali Haberfield!
-		function convertFromMS(ms) {
-	      var d, h, m, s;  
-	      s = Math.floor(ms / 1000); 
-	      m = Math.floor(s / 60);  
-	      s = s % 60;
-	      h = Math.floor(m / 60);
-	      m = m % 60;
-	      d = Math.floor(h / 24);
-	      h = h % 24;  
-	      return "" + h + "hr :" + m + "mins";
-	    };
-
-		var output = '';	
-
-		for (var i = 0; i < tracks.length; i++) {
-
-			var thumb = ((typeof tracks[i].artwork_url !== 'undefined' && tracks[i].artwork_url !== null) ? tracks[i].artwork_url : 'ben');
-			var thumbs = thumb.replace('large', 't200x200');
-			
-		    output += '<div class=track><a href='+tracks[i].permalink_url+' alt="Permalink to '+tracks[i].title+'"><img class=artwork src='+thumbs+' alt='+tracks[i].title+' /></a><div class="clearfix meta"><h1>'+tracks[i].title+'</h1><p class="metadata"><span class="ss-icon">Time</span>' +convertFromMS(tracks[i].duration) + ' | <span class="ss-icon">play</span> '+tracks[i].playback_count+' | <span class="ss-icon">download</span> '+tracks[i].download_count+'</p><audio controls="controls" preload="none"><source src='+tracks[i].stream_url+'?client_id=91bd52531c9b150e11efac29abdb79eb type="audio/mpeg">Your browser does not support the audio element.</audio><!-- download button --><a href='+tracks[i].download_url+'?client_id=91bd52531c9b150e11efac29abdb79eb class="ss-icon btn">download</a></div></div>'
-		}
-
-		$('#sc').html(output);
-	});
-
-	
-	</script>
 
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
@@ -76,6 +39,10 @@
 	<div id="sc" class="sccontent">
 
 	</div>
+
+	<footer>
+		<p>Another lab project from <a href="http://mrqwest.co.uk" title="MrQwest - A Croydon Web Designer">MrQwest</a> ~ <a href="http://twitter.com/mrqwest" title="mrqwest on twitter">@mrqwest</a> with help from <a href="humans.txt" title="humans">these fine folk</a>!
+	</footer>
 
 	<script type="text/javascript" src="js/script.js"></script>
 </body>
