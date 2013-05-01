@@ -4,7 +4,9 @@ SC.initialize({
 	client_id: '91bd52531c9b150e11efac29abdb79eb'
 });
 
-$.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb79eb&format=json', { q: 'dubstep', downloadable: true, duration: { from: 1800000 }, limit: 10 }, function(tracks) {
+function loadMusic(q)
+{
+$.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb79eb&format=json', { q: q, downloadable: true, duration: { from: 1800000 }, limit: 10 }, function(tracks) {
 	console.log(tracks);
 
 	// https://github.com/alihaberfield/journeymix/blob/master/assets/js/journeymix.js, // thanks Ali Haberfield!
@@ -32,11 +34,13 @@ $.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb
 	}
 	$('#sc').html(output);
 });
+}
 
 $('#searchform').submit(function() {
 	$("#search").keyup(function () {
       var sq = $(this).val();
       console.log(sq);
+      loadMusic(sq)
     }).keyup();
 	return false;
 });
