@@ -31,7 +31,7 @@
 <body>
 	<h1>MixDown</h1>
 
-	<form class="search" name="searchfield">
+	<form class="search" name="searchfield" id="searchform">
 		<label class="ss-icon">Search</label>
 		<input class="ss-icon ss-search" type="text" name="search" id="search" />
 	</form>
