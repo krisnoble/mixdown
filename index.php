@@ -34,7 +34,7 @@
 
 	<form class="search" name="searchfield" id="searchform">
 		<label class="ss-icon">Search</label>
-		<input class="ss-icon ss-search" type="text" name="search" id="search" />
+		<input type="text" name="search" id="search" />
 	</form>
 
 	<div id="sc" class="sccontent">
