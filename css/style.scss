@@ -23,7 +23,7 @@ html {
 	background-color: $orange;
 }
 
-body {
+.container {
 	max-width: 40em;
 	margin: 0 auto;
 	font-family: helvetica, arial, sans-serif;
@@ -67,6 +67,7 @@ body {
 	padding: 0;
 	min-height: 12.5em;
 	position: relative;
+	@include transition();
 	h1 {
 		font-weight: bold;   
 		padding: 1em 0 0.8em;
@@ -120,4 +121,22 @@ body {
     	box-shadow: 0 0 0.2em rgba(0,0,0,.1);
     	
     }
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: rgba(darken($orange, 20%), 0.8);
+	padding: 2em 0;
+	margin: 2em auto 0;
+	color: rgba(255,255,255,.8);
+	font-size: 0.9em;
+	text-align: center;
+	@include transition(0.1s);
+	a {
+		color: white;
+		
+	}
+	
 }

@@ -42,7 +42,7 @@ table {
 html {
   background-color: #eb6f38; }
 
-body {
+.container {
   max-width: 40em;
   margin: 0 auto;
   font-family: helvetica, arial, sans-serif;
@@ -82,7 +82,10 @@ body {
   margin: 3em 0;
   padding: 0;
   min-height: 12.5em;
-  position: relative; }
+  position: relative;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
   .track h1 {
     font-weight: bold;
     padding: 1em 0 0.8em;
@@ -130,3 +133,19 @@ body {
     background-color: #f4b295;
     border: 1px solid #f09166;
     box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.1); }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(172, 65, 17, 0.8);
+  padding: 2em 0;
+  margin: 2em auto 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9em;
+  text-align: center;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+  footer a {
+    color: white; }

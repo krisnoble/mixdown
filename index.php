@@ -29,6 +29,7 @@
 
 </head>
 <body>
+	<div class="container">
 	<h1>MixDown</h1>
 
 	<form class="search" name="searchfield" id="searchform">
@@ -39,6 +40,7 @@
 	<div id="sc" class="sccontent">
 
 	</div>
+</div>
 
 	<footer>
 		<p>Another lab project from <a href="http://mrqwest.co.uk" title="MrQwest - A Croydon Web Designer">MrQwest</a> ~ <a href="http://twitter.com/mrqwest" title="mrqwest on twitter">@mrqwest</a> with help from <a href="humans.txt" title="humans">these fine folk</a>!

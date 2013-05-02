@@ -6,7 +6,7 @@ SC.initialize({
 
 function loadMusic(q)
 {
-$.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb79eb&format=json', { q: q, downloadable: true, duration: { from: 1800000 }, limit: 10 }, function(tracks) {
+$.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb79eb&format=json', { q: q, download_url: true, duration: { from: 1800000 }, limit: 10 }, function(tracks) {
 	console.log(tracks);
 
 	// https://github.com/alihaberfield/journeymix/blob/master/assets/js/journeymix.js, // thanks Ali Haberfield!
@@ -26,7 +26,7 @@ $.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb
 
 	for (var i = 0; i < tracks.length; i++) {
 		// grab the artwork URL and pop it in thumb
-		var thumb = ((typeof tracks[i].artwork_url !== 'undefined' && tracks[i].artwork_url !== null) ? tracks[i].artwork_url : 'ben');
+		var thumb = ((typeof tracks[i].artwork_url !== 'undefined' && tracks[i].artwork_url !== null) ? tracks[i].artwork_url : 'img/default.png');
 
 		// replace large with t200x200 in thumb and pop the new val in thumbs
 		var thumbs = thumb.replace('large', 't200x200');
@@ -40,6 +40,7 @@ $('#searchform').submit(function() {
 	$("#search").keyup(function () {
       var sq = $(this).val();
       console.log(sq);
+      $('footer').css( "position", "relative" );
       loadMusic(sq)
     }).keyup();
 	return false;
