@@ -30,7 +30,7 @@
 </head>
 <body>
 	<div class="container">
-	<h1>MixDown</h1>
+	<h1><img src="img/mixdown-white.png" alt="MixDown" /></h1>
 
 	<form class="search" name="searchfield" id="searchform">
 		<label class="ss-icon">Search</label>

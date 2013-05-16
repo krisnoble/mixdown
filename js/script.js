@@ -6,7 +6,7 @@ SC.initialize({
 
 function loadMusic(q)
 {
-$.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb79eb&format=json', { q: q, download_url: true, duration: { from: 1800000 }, limit: 10 }, function(tracks) {
+$.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb79eb&format=json', { q: q, download_url: true, duration: { from: 1800000 }, limit: 20 }, function(tracks) {
 	console.log(tracks);
 
 	// https://github.com/alihaberfield/journeymix/blob/master/assets/js/journeymix.js, // thanks Ali Haberfield!
@@ -41,7 +41,7 @@ $('#searchform').submit(function() {
       var sq = $(this).val();
       console.log(sq);
       $('footer').css( "position", "relative" );
-      loadMusic(sq)
+      loadMusic(sq);
     }).keyup();
 	return false;
 });

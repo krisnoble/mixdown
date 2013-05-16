@@ -48,6 +48,13 @@ html {
   font-family: helvetica, arial, sans-serif;
   color: #343434; }
 
+h1 img {
+  opacity: 0.9;
+  padding-top: 2em;
+  margin: 0 auto;
+  display: block;
+  max-width: 50%; }
+
 .search {
   padding-top: 2em;
   margin: 0 auto;
