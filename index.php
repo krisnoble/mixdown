@@ -26,6 +26,9 @@
 
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
 	<link href="webfonts/ss-standard.css" rel="stylesheet" /> <!-- <3 symbolset -->
+	<link rel="icon" 
+      type="image/png" 
+      href="favicon.png">
 
 </head>
 <body>
