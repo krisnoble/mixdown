@@ -46,7 +46,7 @@
 </div>
 
 	<footer>
-		<p>Another lab project from <a href="http://mrqwest.co.uk" title="MrQwest - A Croydon Web Designer">MrQwest</a> ~ <a href="http://twitter.com/mrqwest" title="mrqwest on twitter">@mrqwest</a> with help from <a href="humans.txt" title="humans">these fine folk</a>!
+		<p>Another lab project from <a href="http://mrqwest.co.uk" title="MrQwest - A Croydon Web Designer">MrQwest</a> ~ <a href="http://twitter.com/mrqwest" title="mrqwest on twitter">@mrqwest</a> with help from <a href="humans.txt" title="humans">these fine folk</a>! <a href="https://github.com/MrQwest/mixdown" title="Fork me on github">Fork me on Github</a></p>
 	</footer>
 
 	<script type="text/javascript" src="js/script.js"></script>
