@@ -39,7 +39,7 @@
 		<label class="ss-icon">Search</label>
 		<input type="text" name="search" id="search" />
 	</form>
-	<span class="sortlength btn"><a href="#">By length</a></span>
+	
 	<div id="sc" class="sccontent">
 
 	</div>

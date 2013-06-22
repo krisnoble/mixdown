@@ -6,14 +6,14 @@ SC.initialize({
 
 function loadMusic(q)
 {
-$.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb79eb&format=json', { q: q, download_url: true, duration: { from: 1800000 }, limit: 20 }, function(tracks) {
+$.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb79eb&format=json', { q: q, download_count: {from: 10 }, duration: { from: 1800000 }, limit: 50 }, function(tracks) {
 
 
 
 	// You pass the comparison function (comparer) to .sort
 	// console.log(tracks.sort(comparer).reverse());
 
-	// console.log(tracks);
+	console.log(tracks);
 
 	// https://github.com/alihaberfield/journeymix/blob/master/assets/js/journeymix.js, // thanks Ali Haberfield!
 	function convertFromMS(ms) {
@@ -36,7 +36,7 @@ $.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb
 
 		// replace large with t200x200 in thumb and pop the new val in thumbs
 		var thumbs = thumb.replace('large', 't200x200');
-		output += '<div class=track><a href='+tracks[i].permalink_url+' alt="Permalink to '+tracks[i].title+'"><img class=artwork src='+thumbs+' alt='+tracks[i].title+' /></a><div class="clearfix meta"><h1>'+tracks[i].title+'</h1><p class="metadata"><span class="ss-icon">Time</span>' +convertFromMS(tracks[i].duration) + ' | <span class="ss-icon">play</span> '+tracks[i].playback_count+' | <span class="ss-icon">download</span> '+tracks[i].download_count+'</p><audio controls="controls" preload="none"><source src='+tracks[i].stream_url+'?client_id=91bd52531c9b150e11efac29abdb79eb type="audio/mpeg">Your browser does not support the audio element.</audio><!-- download button --><a href='+tracks[i].download_url+'?client_id=91bd52531c9b150e11efac29abdb79eb class="ss-icon btn">download</a></div></div>';
+		output += '<div class=track><a href='+tracks[i].permalink_url+' alt="Permalink to '+tracks[i].title+'"><img class=artwork src='+thumbs+' alt='+tracks[i].title+' /></a><div class="clearfix meta"><h1><a href='+tracks[i].permalink_url+' alt="Permalink to '+tracks[i].title+'">'+tracks[i].title+'</a></h1><p class="metadata"><span class="ss-icon">Time</span>' +convertFromMS(tracks[i].duration) + ' | <span class="ss-icon">play</span> '+tracks[i].playback_count+' | <span class="ss-icon">download</span> '+tracks[i].download_count+' | <span class="ss-icon">tag</span>'+tracks[i].genre+'</p><audio controls="controls" preload="none"><source src='+tracks[i].stream_url+'?client_id=91bd52531c9b150e11efac29abdb79eb type="audio/mpeg">Your browser does not support the audio element.</audio><!-- download button --><a href='+tracks[i].download_url+'?client_id=91bd52531c9b150e11efac29abdb79eb class="ss-icon btn">download</a></div></div>';
 	}
 
 	// Takes two elements of the array and compares them

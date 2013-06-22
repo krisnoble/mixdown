@@ -101,6 +101,14 @@ h1 img {
     margin-bottom: 1em;
     color: rgba(0, 0, 0, 0.7);
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9); }
+    .track h1 a {
+      color: rgba(0, 0, 0, 0.7);
+      text-decoration: none;
+      -webkit-transition: all 0.1s ease-in-out;
+      -moz-transition: all 0.1s ease-in-out;
+      transition: all 0.1s ease-in-out; }
+      .track h1 a:hover {
+        color: #eb6f38; }
   .track img {
     border-top-left-radius: 0.14em;
     border-bottom-left-radius: 0.14em;
