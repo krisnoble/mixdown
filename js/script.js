@@ -57,6 +57,8 @@ $.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb
 .fail(function() {
 	// This fail function fires if the .get encounters a problem - might be nice to put something on the page otherwise its just blank. Search 'indie' for an example
 	console.log("There was an error retriving the results");
+	// TODO: Remove the linebreaks and style text
+	$('#sc').html('<br /><br /><p>Oops, no one has added anything to Soundcloud that matches your search.</p>');
 });
 }
 
