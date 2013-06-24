@@ -9,7 +9,6 @@ function loadMusic(q)
 $.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb79eb&format=json', { q: q, download_count: {from: 10 }, duration: { from: 1800000 }, limit: 50 }, function(tracks) {
 
 
-
 	// You pass the comparison function (comparer) to .sort
 	// console.log(tracks.sort(comparer).reverse());
 
@@ -49,11 +48,15 @@ $.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb
 		console.log(tracks.sort(comparer).reverse());
 		event.preventDefault();
 	});
-	
+
 	// THIS IS THE OUTPUT, It takes the output var and stuffs it into #sc.
 	$('#sc').html(output);
 
 
+})
+.fail(function() {
+	// This fail function fires if the .get encounters a problem - might be nice to put something on the page otherwise its just blank. Search 'indie' for an example
+	console.log("There was an error retriving the results");
 });
 }
 
