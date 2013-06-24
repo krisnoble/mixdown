@@ -1,4 +1,4 @@
-# MIXDOWN
+# [MIXDOWN](http://mrqwest.co.uk/labs/mixdown/)
 
 I use SoundCloud to find DJ mixes to listen to in the car. I have some pretty niche requirements though. The mixes need to be at least 30 minutes long, it needs to be downloadable and it needs to be good.
 
