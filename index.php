@@ -26,9 +26,7 @@
 
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
 	<link href="webfonts/ss-standard.css" rel="stylesheet" /> <!-- <3 symbolset -->
-	<link rel="icon" 
-      type="image/png" 
-      href="favicon.png">
+	<link rel="icon" type="image/png" href="favicon.png" />
 
 </head>
 <body>
@@ -59,5 +57,10 @@
 		ga('create', 'UA-1099002-21', 'mrqwest.co.uk');
 	 	ga('send', 'pageview');
 	</script>
+	<?php $sq = str_replace('/labs/mixdown', '', substr($_SERVER['REQUEST_URI'], 1)); if($sq != '') { $sq = substr($_SERVER['REQUEST_URI'], 1) ?><script>
+		$('#search').val('<?= $sq ?>');
+		loadMusic('<?= $sq ?>');
+		history.pushState('<?= $sq ?>', '<?= $sq ?> mixes ~ MixDown', '<?= $sq ?>');	
+	</script><?php } ?> 
 </body>
 </html>

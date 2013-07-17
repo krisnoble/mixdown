@@ -63,14 +63,21 @@ $.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb
 }
 
 
-$('#searchform').submit(function() {
-	$("#search").keyup(function () {
-      var sq = $(this).val();
-      console.log(sq);
-      $('footer').css( "position", "relative" );
-      loadMusic(sq);
-    }).keyup();
-	return false;
+window.addEventListener('popstate', function(event) {
+	if(event.state != null) { $("#search").val(event.state); loadMusic(event.state); }
 });
 
+$('#searchform').submit(function(e) {	
+	e.preventDefault();
+	var sq = $("#search").val();
+	if(sq != '') {
+		console.log(sq);      
+	    $('footer').css( "position", "relative" );
+	    loadMusic(sq);
+		history.pushState(sq, '"' + sq + '" mixes ~ MixDown', sq);
+	}
+});
 
+$('#searchform .ss-icon').click(function(){
+	$('#searchform').submit();
+});
