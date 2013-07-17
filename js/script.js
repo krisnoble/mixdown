@@ -71,10 +71,11 @@ $('#searchform').submit(function(e) {
 	e.preventDefault();
 	var sq = $("#search").val();
 	if(sq != '') {
-		console.log(sq);      
+		console.log(sq); 
+		var url = sq.replace(' ', '+');     
 	    $('footer').css( "position", "relative" );
 	    loadMusic(sq);
-		history.pushState(sq, '"' + sq + '" mixes ~ MixDown', sq);
+		history.pushState(sq, '"' + sq + '" mixes ~ MixDown', url);
 	}
 });
 

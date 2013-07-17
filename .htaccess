@@ -1,5 +1,5 @@
 RewriteEngine on
 Options +FollowSymlinks
 
-RewriteCond $1 !^(index\.php|css|js|img|robots\.txt|humans\.txt|favicon\.png)
-RewriteRule ^(.*)$ /index.php [L]
+RewriteCond $1 !^(index\.php|webfonts|css|js|img|robots\.txt|humans\.txt|favicon\.png)
+RewriteRule ^(.*)$ /labs/mixdown/index.php [L]

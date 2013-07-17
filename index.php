@@ -57,10 +57,10 @@
 		ga('create', 'UA-1099002-21', 'mrqwest.co.uk');
 	 	ga('send', 'pageview');
 	</script>
-	<?php $sq = str_replace('/labs/mixdown', '', substr($_SERVER['REQUEST_URI'], 1)); if($sq != '') { $sq = substr($_SERVER['REQUEST_URI'], 1) ?><script>
+	<?php $url = substr(str_replace(array('labs/mixdown/', '%20'), array('', '+'), $_SERVER['REQUEST_URI']), 1); if($url != '') { $sq = str_replace('+', ' ', $url); ?><script> 
 		$('#search').val('<?= $sq ?>');
 		loadMusic('<?= $sq ?>');
-		history.pushState('<?= $sq ?>', '<?= $sq ?> mixes ~ MixDown', '<?= $sq ?>');	
+		history.replaceState('<?= $sq ?>', '"<?= $sq ?>" mixes ~ MixDown', '<?= $url ?>');	
 	</script><?php } ?> 
 </body>
 </html>
