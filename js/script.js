@@ -51,6 +51,9 @@ $.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb
 
 	// THIS IS THE OUTPUT, It takes the output var and stuffs it into #sc.
 	$('#sc').html(output);
+	
+	var url = q.replace(/\s/g, '\+');    
+	history.pushState(q, '"' + q + '" mixes ~ MixDown', url);
 
 
 })
@@ -71,11 +74,9 @@ $('#searchform').submit(function(e) {
 	e.preventDefault();
 	var sq = $("#search").val();
 	if(sq != '') {
-		console.log(sq); 
-		var url = sq.replace(' ', '+');     
+		console.log(sq);  
 	    $('footer').css( "position", "relative" );
 	    loadMusic(sq);
-		history.pushState(sq, '"' + sq + '" mixes ~ MixDown', url);
 	}
 });
 
