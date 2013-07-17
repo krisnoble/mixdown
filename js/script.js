@@ -52,6 +52,8 @@ $.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb
 	// THIS IS THE OUTPUT, It takes the output var and stuffs it into #sc.
 	$('#sc').html(output);
 	
+	$('#spinner').hide();	
+	
 	var url = q.replace(/\s/g, '\+');    
 	history.pushState(q, '"' + q + '" mixes ~ MixDown', url);
 
@@ -62,6 +64,9 @@ $.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb
 	console.log("There was an error retriving the results");
 	// TODO: Remove the linebreaks and style text
 	$('#sc').html('<br /><br /><p>Oops, no one has added anything to Soundcloud that matches your search.</p>');
+	
+	$('#spinner').hide();	
+
 });
 }
 
@@ -72,6 +77,7 @@ window.addEventListener('popstate', function(event) {
 
 $('#searchform').submit(function(e) {	
 	e.preventDefault();
+	$('#spinner').show().css('display', 'block');
 	var sq = $("#search").val();
 	if(sq != '') {
 		console.log(sq);  

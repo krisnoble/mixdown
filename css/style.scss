@@ -71,6 +71,11 @@ h1 img {
   cursor: pointer;
 }
 
+#spinner {
+  display:none; 
+  margin:10px auto 0 auto;
+}
+
 .track {
 	background-color: rgba(255,255,255,.7);
 	border-radius: 0.2em;

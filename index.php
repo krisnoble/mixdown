@@ -36,6 +36,7 @@
 	<form class="search" name="searchfield" id="searchform">
 		<label class="ss-icon">Search</label>
 		<input type="text" name="search" id="search" />
+		<img id="spinner" src="css/spinner.gif" alt="Loading&hellip;" title="Loading results&hellip;" />
 	</form>
 	
 	<div id="sc" class="sccontent">
