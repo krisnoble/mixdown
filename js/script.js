@@ -53,11 +53,6 @@ $.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb
 	$('#sc').html(output);
 	
 	$('#spinner').hide();	
-	
-	var url = q.replace(/\s/g, '\+');    
-	history.pushState(q, '"' + q + '" mixes ~ MixDown', url);
-
-
 })
 .fail(function() {
 	// This fail function fires if the .get encounters a problem - might be nice to put something on the page otherwise its just blank. Search 'indie' for an example
@@ -81,6 +76,10 @@ $('#searchform').submit(function(e) {
 	var sq = $("#search").val();
 	if(sq != '') {
 		console.log(sq);  
+				
+		var url = sq.replace(/\s/g, '\+');    
+		history.pushState(sq, '"' + sq + '" mixes ~ MixDown', url);
+		
 	    $('footer').css( "position", "relative" );
 	    loadMusic(sq);
 	}
