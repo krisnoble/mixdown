@@ -62,6 +62,7 @@
 		$('#search').val('<?= $sq ?>');
 		loadMusic('<?= $sq ?>');
 		history.replaceState('<?= $sq ?>', '"<?= $sq ?>" mixes ~ MixDown', '<?= $url ?>');	
-	</script><?php } ?> 
+	</script>
+	<style>footer { position:relative; }</style><?php } ?> 
 </body>
 </html>
